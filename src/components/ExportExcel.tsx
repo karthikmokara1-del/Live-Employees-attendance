@@ -68,13 +68,16 @@ export default function ExportExcel() {
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.aoa_to_sheet([headerRow, ...dataRows]);
 
-    headerRow.forEach((_, idx) => {
-      const cell = XLSX.utils.encode_col(idx) + '1';
-      if (!ws[cell]) ws[cell] = {};
-      ws[cell].fill = { fgColor: { rgb: 'FFFF00' } };
-      ws[cell].font = { bold: true };
-      ws[cell].alignment = { horizontal: 'center', vertical: 'center' };
-    });
+   headerRow.forEach((_, idx) => {
+  const cell = XLSX.utils.encode_col(idx) + '1';
+  if (!ws[cell]) ws[cell] = {};
+  ws[cell].s = {
+    fill: { fgColor: { rgb: "FFFF00" } },
+    font: { bold: true },
+    alignment: { horizontal: "center", vertical: "center" }
+  };
+});
+
 
     const colWidths = [20, 15, 15, 20];
     dates.forEach(() => colWidths.push(12));
