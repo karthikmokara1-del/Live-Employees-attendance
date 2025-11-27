@@ -50,7 +50,7 @@ export default function ExportExcel() {
     const headerRow = [ 'EMPLOYEE ID','EMPLOYEE NAME', 'DIVISION', 'SITE'];
     dates.forEach(date => {
       const d = new Date(date + 'T00:00:00');
-      const formatted = `'${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getDate()}`;
+      const formatted = `'${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}_DATE`;
 
       headerRow.push(formatted);
     });
