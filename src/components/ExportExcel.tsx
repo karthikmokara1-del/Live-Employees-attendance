@@ -47,7 +47,7 @@ export default function ExportExcel() {
       attendanceMap.get(a.employee_id)!.set(a.date, a.status);
     });
 
-    const headerRow = ['EMPLOYEE NAME', 'EMPLOYEE ID', 'DIVISION', 'SITE'];
+    const headerRow = [ 'EMPLOYEE ID','EMPLOYEE NAME', 'DIVISION', 'SITE'];
     dates.forEach(date => {
       const d = new Date(date + 'T00:00:00');
       const formatted = `${d.getDate()}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
