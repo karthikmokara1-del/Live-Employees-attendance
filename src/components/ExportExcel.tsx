@@ -56,7 +56,7 @@ export default function ExportExcel() {
 
     const dataRows: (string | number)[][] = [];
     employees.forEach(emp => {
-      const row: (string | number)[] = [emp.name, emp.employee_id, emp.division, emp.site];
+      const row: (string | number)[] = [ emp.employee_id,emp.name, emp.division, emp.site];
       const empAttendance = attendanceMap.get(emp.id);
       dates.forEach(date => {
         const status = empAttendance?.get(date) || '';
